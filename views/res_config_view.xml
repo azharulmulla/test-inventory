@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_stock_config_consignee_companies" model="ir.ui.view">
+        <field name="name">res.config.settings - consignees company</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-string='Inventory']" position="inside">
+                <h2>Consignee's Companies</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <field name="consignee_company_ids" widget="many2many_tags"/>
+                        </div>
+                    </div>
+                </div>
+                <h2>DC Location's</h2>
+                <div class="row mt16 o_settings_container">
+                    <label for="source_location_id" string="Source"/>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <field name="source_location_id" class="oe_inline" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt16 o_settings_container">
+                    <label for="dest_location_id" string="Destination"/>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <field name="dest_location_id" class="oe_inline" />
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
